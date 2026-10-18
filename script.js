@@ -1,6 +1,6 @@
 /* ============ EDIT BAGIAN INI ============ */
 const GROUP = {
-  members: ["Nama Anggota 1 · NIM", "Nama Anggota 2 · NIM"],
+  members: ["Raisyatul Alya · 24105111090", "Aida Yusira · 24105111072"],
   course: "Rekayasa Perangkat Lunak 2"
 };
 const PROJECTS = [
