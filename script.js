@@ -1,4 +1,4 @@
-/* ============ EDIT BAGIAN INI ============ */
+
 const GROUP = {
   members: ["Raisyatul Alya · 24105111090", "Aida Yusira · 24105111072"],
   course: "Rekayasa Perangkat Lunak 2"
