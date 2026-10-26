@@ -50,7 +50,8 @@ dialog h2{font-family:"Fredoka",sans-serif;font-size:1.7rem;margin:2px 0 8px}
 dialog p{line-height:1.55}
 .tags{list-style:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0 0 12px}
 .tags li{background:#e6d9c0;border-radius:99px;padding:3px 12px;font-size:.82rem;font-weight:500}
-.by{margin:0 0 18px;color:var(--muted);font-size:.9rem}
-.go{display:inline-block;background:#c96f4a;color:#fff;text-decoration:none;font-weight:700;padding:11px 24px;border-radius:12px}
+.links{display:flex;flex-direction:column;gap:10px}
+.go.repo{background:#3b3a38}
+.go{display:block;text-align:center;background:#c96f4a;color:#fff;text-decoration:none;font-weight:700;padding:11px 24px;border-radius:12px}
 .go[aria-disabled="true"]{opacity:.5;pointer-events:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
