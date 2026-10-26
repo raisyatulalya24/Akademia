@@ -1,14 +1,15 @@
-
+/* ============ EDIT BAGIAN INI ============
+   repo = link GitHub (kode), demo = link hosting (website jalan) */
 const GROUP = {
   members: ["Raisyatul Alya · 24105111090", "Aida Yusira · 24105111072"],
   course: "Rekayasa Perangkat Lunak 2"
 };
 const PROJECTS = [
-  { room:"library",  title:"Judul Project 1", desc:"Deskripsi singkat project 1.", tags:["Tag"], by:"Dikerjakan oleh: Anggota 1", link:"#" },
-  { room:"teachers", title:"Judul Project 2", desc:"Deskripsi singkat project 2.", tags:["Tag"], by:"Dikerjakan oleh: Anggota 2", link:"#" },
-  { room:"class",    title:"Judul Project 3", desc:"Deskripsi singkat project 3.", tags:["Tag"], by:"Dikerjakan oleh: Anggota 1", link:"#" },
-  { room:"canteen",  title:"Judul Project 4", desc:"Deskripsi singkat project 4.", tags:["Tag"], by:"Dikerjakan oleh: Anggota 2", link:"#" },
-  { room:"garden",   title:"Final Project",   desc:"Deskripsi final project.",     tags:["Tag"], by:"Dikerjakan oleh: Anggota 1 & 2", link:"#" }
+  { room:"library", title:"Discoveria", desc:"Portal edukasi interaktif berbasis Laravel yang menyediakan materi pelajaran (Matematika, Sains, Teknologi, Bahasa) lengkap dengan gambar, sistem kuis otomatis, pelacakan skor, serta fitur simpan favorit. Dibangun untuk menghadirkan pengalaman belajar yang lebih menyenangkan dan terstruktur.", tags:["Laravel","PHP","MySQL","TailwindCSS","E-Learning","Quiz System","Web App","Interactive Learning"], repo:"https://github.com/AidaYusira/discoveria", demo:"https://discoveria.wasmer.app/" },
+  { room:"teachers", title:"Judul Project 2", desc:"Deskripsi singkat project 2.", tags:["Tag"], repo:"#", demo:"#" },
+  { room:"class",    title:"Judul Project 3", desc:"Deskripsi singkat project 3.", tags:["Tag"], repo:"#", demo:"#" },
+  { room:"canteen",  title:"Judul Project 4", desc:"Deskripsi singkat project 4.", tags:["Tag"], repo:"#", demo:"#" },
+  { room:"garden",   title:"Final Project",   desc:"Deskripsi final project.",     tags:["Tag"], repo:"#", demo:"#" }
 ];
 
 /* MODE FOTO (opsional): isi path gambar rasio 16:9 per ruangan agar tampil foto asli,
@@ -172,17 +173,20 @@ function openDoorsThenHall(){
   svg.classList.add("open");
   setTimeout(()=>go("hall"), 900);
 }
+function setLink(a, url, ok, empty){
+  const has = url && url !== "#";
+  a.href = has ? url : "#";
+  a.setAttribute("aria-disabled", has ? "false" : "true");
+  a.textContent = has ? ok : empty;
+}
 function openProject(i){
   const p = PROJECTS[i];
   $("d-room").textContent = NAMES[p.room];
   $("d-title").textContent = p.title;
   $("d-desc").textContent = p.desc;
   $("d-tags").innerHTML = p.tags.map(t=>`<li>${t}</li>`).join("");
-  $("d-by").textContent = p.by;
-  const a = $("d-link");
-  a.href = p.link;
-  a.setAttribute("aria-disabled", p.link==="#" ? "true":"false");
-  a.textContent = p.link==="#" ? "Link belum diisi" : "Buka project";
+  setLink($("d-repo"), p.repo, "Lihat kode di GitHub", "Link GitHub belum diisi");
+  setLink($("d-demo"), p.demo, "Buka website (demo)", "Link hosting belum diisi");
   visited.add(i);
   try { localStorage.setItem(KEY, JSON.stringify([...visited])); } catch(e){}
   $("progress").textContent = `${visited.size} dari 5 ruangan dikunjungi`;
