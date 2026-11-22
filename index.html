@@ -6,31 +6,12 @@
 <title>Akademia · Portal Project RPL 2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hud">
-  <div class="brand"><b>Akademia</b><span id="members"></span></div>
-  <div class="right">
-    <button id="back" class="btn" hidden></button>
-    <span class="chip" id="progress" aria-live="polite"></span>
-  </div>
-</header>
-<main id="stage" aria-live="polite"></main>
-<p class="hint" id="hint"></p>
-
-<dialog id="dlg" aria-labelledby="d-title">
-  <button class="x" id="x" aria-label="Tutup">✕</button>
-  <p class="room" id="d-room"></p>
-  <h2 id="d-title"></h2>
-  <p id="d-desc"></p>
-  <ul class="tags" id="d-tags"></ul>
-  <div class="links">
-    <a class="go repo" id="d-repo" target="_blank" rel="noopener">Lihat kode di GitHub</a>
-    <a class="go demo" id="d-demo" target="_blank" rel="noopener">Buka website (demo)</a>
-  </div>
-</dialog>
+<div id="wrap"><div class="stage" id="stage"></div></div>
+<span class="chip" id="progress" aria-live="polite"></span>
 <script src="script.js"></script>
 </body>
 </html>
